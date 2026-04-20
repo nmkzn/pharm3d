@@ -1,0 +1,50 @@
+name: ph3d-gpu
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - setuptools>=69
+  - wheel
+
+  # ---- core scientific stack ----
+  - numpy=1.26
+  - pandas=2.2
+  - scipy=1.11
+  - scikit-learn=1.4
+  - matplotlib=3.8
+  - joblib=1.4
+  - h5py=3.11
+  - biopython=1.84
+  - requests=2.32
+  - pillow=10.4
+  - packaging>=24
+  - typing_extensions>=4.12
+  - tqdm
+  - pyyaml
+  - pymysql=1.1
+
+  # ---- cheminformatics ----
+  - rdkit=2024.09.*
+  - apbs
+  - pdb2pqr
+
+  # ---- optional visualization / legacy helper ----
+  # 用开源版 PyMOL，避免继续绑 schrodinger channel 的老二进制。
+  # 如果你后面确认项目完全不用 PyMOL，可以把这一行删掉，让环境更干净。
+  - pymol-open-source
+
+  # ---- GPU PyTorch ----
+  # 选 2.4.1 是为了兼顾 CUDA 与老 checkpoint / 老代码兼容性。
+  # 如你的驱动明确更适合 12.4，可把下面 pytorch-cuda=11.8 改成 12.4。
+  - pytorch=2.4.1
+  - torchvision=0.19.1
+  - torchaudio=2.4.1
+  - pytorch-cuda=11.8
+
+  - pip:
+      - futures==3.0.5
