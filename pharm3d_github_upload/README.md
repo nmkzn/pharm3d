@@ -8,11 +8,11 @@ This repo is design to deploy pharm3d tool on server.
 
 ## mysql配置
     1. 在服务器上安装mysql服务器，并且开启mysql数据库
-    2. 创建用户shiyu, 并且修改用户的密码为PkJZaO.9h65
+    2. 创建用户, 并且指定用户密码
     3. 在mysql软件中创建数据库：pharm3d
     命令为：create database pharm3d default charset utf8 collate utf8_general_ci;
-    4. 为用户shiyu分配数据库权限
-    命令为：GRANT ALL PRIVILEGES ON pharm3d.* TO 'shiyu'@'localhost';
+    4. 为用户分配数据库权限
+ 
     5. 在pharm3d数据库中创建数据表（flaskusers）用于存储用户登录的数据
 ```sql
 create table flaskusers
